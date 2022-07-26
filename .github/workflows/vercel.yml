@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
       # Only set up preview environment for pull requests
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: Ladonyak
         with:
           cli_config_credentials_token: ${{ secrets.TFC_API_TOKEN }}
       # Update main.tf to default to single workspace
