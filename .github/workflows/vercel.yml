@@ -12,7 +12,7 @@ jobs:
     name: "Build and Deploy Preview Environment"
     runs-on: ubuntu-latest
     env:
-      tfcWorkspaceName: hcup-be-${{ github.head_ref }}
+      tfcWorkspaceName: hcup-be-shared
       tfcOrg: Terraform_GitHub_Actions_and_Vercel
     steps:
       - name: Checkout
@@ -21,7 +21,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          cli_config_credentials_token: ${{ secrets.TFC_API_TOKEN }}
+          cli_config_credentials_token: QrcXBw1WAGQZbQ.atlasv1.2X3KqMmReEaRIAS01UF4977KpV8aVmRC4q7b89p8yzAE9nNDYwblVpzLPEjENoaXT6U
       # Update main.tf to default to single workspace
       - name: Terraform Init, create TFC workspace
         id: init-workspace
