@@ -69,7 +69,7 @@ jobs:
         run: |
           terraform destroy --auto-approve
           curl --header "Authorization: Bearer ${{ secrets.TFC_API_TOKEN }}" --header "Content-Type: application/vnd.api+json" --request DELETE "https://app.terraform.io/api/v2/organizations/${tfcOrg}/workspaces/${tfcWorkspaceName}"
-      # Builds and deploys production environment, similar to preview environment but isProd is set to true
+      # Builds and deploys production environment, similar to preview environment but isProd is set to true.
       # This builds the production environment and does not build any accompanying backend preview resources
       - name: Build and deploy Prod Environment
         id: build-deploy-prod-environment
